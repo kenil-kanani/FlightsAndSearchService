@@ -50,7 +50,7 @@ const get = async (req, res) => {
         return res.status(200).json({
             data: response, 
             success: true,
-            message: 'Successfully fetched a city',
+            message: 'Successfully get a city',
             err: {}
         });
     } catch (error) {
@@ -67,11 +67,11 @@ const get = async (req, res) => {
 //- PATCH => /city/:id  -> req.body
 const update = async (req, res) => {
     try {
-        const response = await cityService.updateCity(req.params.id);
+        const response = await cityService.updateCity(req.params.id , req.body);
         return res.status(200).json({
             data: response, 
             success: true,
-            message: 'Successfully fetched a city',
+            message: 'Successfully update a city', 
             err: {}
         });
     } catch (error) {
