@@ -27,7 +27,7 @@ const destroy = async (req, res) => {
     try {
         const response = await cityService.deleteCity(req.params.id);
         return res.status(200).json({
-            data: response, 
+            data: response,
             success: true,
             message: 'Successfully deleted a city',
             err: {}
@@ -46,9 +46,9 @@ const destroy = async (req, res) => {
 //- GET => /city/:id
 const get = async (req, res) => {
     try {
-        const response = await cityService.getCity(req.params.id , req.body);
+        const response = await cityService.getCity(req.params.id, req.body);
         return res.status(200).json({
-            data: response, 
+            data: response,
             success: true,
             message: 'Successfully get a city',
             err: {}
@@ -67,11 +67,11 @@ const get = async (req, res) => {
 //- PATCH => /city/:id  -> req.body
 const update = async (req, res) => {
     try {
-        const response = await cityService.updateCity(req.params.id , req.body);
+        const response = await cityService.updateCity(req.params.id, req.body);
         return res.status(200).json({
-            data: response, 
+            data: response,
             success: true,
-            message: 'Successfully update a city', 
+            message: 'Successfully update a city',
             err: {}
         });
     } catch (error) {
@@ -85,9 +85,30 @@ const update = async (req, res) => {
     }
 }
 
+const getAll = async (req, res) => {
+    try {
+        const response = await cityService.getAllCities();
+        return res.status(200).json({
+            data: response,
+            success: true,
+            message: 'Successfully get all cities',
+            err: {}
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            data: {},
+            success: false,
+            message: 'Not able to get all cities',
+            err: error
+        })
+    }
+}
+
 module.exports = {
     create,
     destroy,
     get,
-    update
+    update,
+    getAll
 }
