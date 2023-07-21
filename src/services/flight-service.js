@@ -24,10 +24,32 @@ class FlightService {
         }
     }
 
-    async getFlightData(data) {
+    async getFlight(flightId) {
+        try {
+            console.log("===================================")
+            const flight = await this.flightrepository.getFlight(flightId);
+            console.log(flight, "---------------")
+            return flight;
+        } catch (error) {
+            console.log("Something went wrong at service layer");
+            throw { error };
+        }
+    }
+
+    async getAllFlightData(data) {
         try {
             const flights = await this.flightrepository.getAllFlight(data);
             return flights;
+        } catch (error) {
+            console.log("Something went wrong at service layer");
+            throw { error };
+        }
+    }
+
+    async updateFlight(flightId, data) {
+        try {
+            const response = await this.flightrepository.updateFlights(flightId, data);
+            return response;
         } catch (error) {
             console.log("Something went wrong at service layer");
             throw { error };
