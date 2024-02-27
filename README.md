@@ -19,22 +19,15 @@
 }
 ```
 - Once you've added your db config as listed above, go to the src folder from your terminal and execute `npx sequelize db:create` , and then execute 
-
 `npx sequelize db:migrate`
 
+- Once the above steps are done, execute `npm start` to start the server.
+
 ## DB Design
-    - Airplane Table
-    - Flight
-    - Airport
-    - City
-    
-    - A flight belongs to an airplane but one airplane can be used in multiple flights
-    - A city has many airports but one airport belongs to a city
-    - One airport can have many flights, but a flight belongs to one airport
+The DB design is as follows:
+- There are 4 tables, `Airplanes` , `Airports` , `Cities` and `Flights`
+- <img src='./assets//Flight_Search_Database.png' />
 
-
-## Tables
-
-### City -> id, name, created_at, updated_at
-### Airport -> id, name, address, city_id, created_at, updated_at
-    Relationship -> City has many Airports and Airport belongs to a city.(one to many)
+### Sequilize-cli commands
+1. City Model
+    - `npx sequelize model:generate --name City --attributes name:string`
