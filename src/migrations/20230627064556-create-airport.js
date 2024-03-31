@@ -18,11 +18,11 @@ module.exports = {
       },
       cityId: {
         type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
+        onDelete: 'CASCADE', // if city is deleted then all the airports of that city will be deleted
         references: {
-          model: 'Cities',
-          key: 'id',
-          as: 'cityId'
+          model: 'Cities', // name of Source model
+          key: 'id', // key in Source model that we're referencing
+          as: 'cityId' // name of the key in the target model
         },
         allowNull: false
       },

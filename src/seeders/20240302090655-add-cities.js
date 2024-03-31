@@ -13,63 +13,62 @@ module.exports = {
      * }], {});
     */
 
-    await queryInterface.bulkInsert('Airports', [
+    await queryInterface.bulkInsert('Cities', [
       {
-        name: 'Surat Iternational Airport',
-        cityId: 1,
+        id: 1,
+        name: "Surat",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Mumbai Iternational Airport',
-        cityId: 2,
+        id: 2,
+        name: "Mumbai",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Delhi Iternational Airport',
-        cityId: 3,
+        id: 3,
+        name: "Delhi",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Bangalore Iternational Airport',
-        cityId: 4,
+        id: 4,
+        name: "Bangalore",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Hyderabad Iternational Airport',
-        cityId: 5,
+        id: 5,
+        name: "Hyderabad",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Chennai Iternational Airport',
-        cityId: 6,
+        id: 6,
+        name: "Chennai",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Kolkata Iternational Airport',
-        cityId: 7,
+        id: 7,
+        name: "Kolkata",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Ahmedabad Iternational Airport',
-        cityId: 8,
+        id: 8,
+        name: "Ahmedabad",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Pune Iternational Airport',
-        cityId: 9,
+        id: 9,
+        name: "Pune",
         createdAt: new Date(),
         updatedAt: new Date()
-      }
-    ], {}
-    )
+      },
+    ])
   },
 
   async down(queryInterface, Sequelize) {
@@ -79,5 +78,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+
+    await queryInterface.bulkDelete('Cities', null, {});
   }
 };
