@@ -10,5 +10,6 @@ router.delete('/:id', CityController.destroy);
 router.get('/:id', CityController.get);
 router.get('/', CityController.getAll);
 router.patch('/:id', CityController.update);
+router.get('/:id/airports', CityController.getAirportsOfCity);
 
 module.exports = router;

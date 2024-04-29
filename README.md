@@ -39,9 +39,9 @@ The DB design is as follows:
     2. Airport Model
         - `npx sequelize model:generate --name Airport --attributes name:string,address:string,cityId:integer`
     3. Airplane Model
-        - `npx sequelize model:generate --name Airplane --attributes name:string`
+        - `npx sequelize model:generate --name Airplane --attributes modelNumber:string,capacity:integer`
     4. Flight Model
-        - `npx sequelize model:generate --name Flight --attributes flightNumber:string,departureTime:date,arrivalTime:date,departureAirportId:integer,arrivalAirportId:integer,airplaneId:integer`
+        - `npx sequelize model:generate --name Flight --attributes flightNumber:string,departureTime:date,arrivalTime:date,departureAirportId:integer,arrivalAirportId:integer,airplaneId:integer,price:integer,bordingGate:string,totalSeats:integer`
 2. Migration
     - `npx sequelize db:migrate`
 3. Genarate Seeder files
